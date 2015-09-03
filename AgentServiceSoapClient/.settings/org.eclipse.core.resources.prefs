@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/com/as/agentservice/service/AgentService.java=UTF-8
+encoding//src/com/as/agentservice/service/AgentServiceService.java=UTF-8
+encoding//src/com/as/agentservice/service/AgentServiceServiceLocator.java=UTF-8
+encoding//src/com/as/agentservice/service/AgentServiceSoapBindingStub.java=UTF-8
+encoding//src/com/as/agentservice/vo/Agent.java=UTF-8

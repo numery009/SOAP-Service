@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.agentservice.as.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.agentservice.as.com" xmlns:intf="http://service.agentservice.as.com" xmlns:tns1="http://vo.agentservice.as.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.agentservice.as.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://vo.agentservice.as.com"/>
+   <element name="getAgent">
+    <complexType>
+     <sequence>
+      <element name="i" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAgentResponse">
+    <complexType>
+     <sequence>
+      <element name="getAgentReturn" type="tns1:Agent"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="creatAgent">
+    <complexType>
+     <sequence>
+      <element name="agent" type="tns1:Agent"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="creatAgentResponse">
+    <complexType/>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://vo.agentservice.as.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Agent">
+    <sequence>
+     <element name="agentAddress" nillable="true" type="xsd:string"/>
+     <element name="agentId" type="xsd:int"/>
+     <element name="agentName" nillable="true" type="xsd:string"/>
+     <element name="city" nillable="true" type="xsd:string"/>
+     <element name="state" nillable="true" type="xsd:string"/>
+     <element name="zipCode" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getAgentResponse">
+
+      <wsdl:part element="impl:getAgentResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="creatAgentRequest">
+
+      <wsdl:part element="impl:creatAgent" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAgentRequest">
+
+      <wsdl:part element="impl:getAgent" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="creatAgentResponse">
+
+      <wsdl:part element="impl:creatAgentResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="AgentService">
+
+      <wsdl:operation name="getAgent">
+
+         <wsdl:input message="impl:getAgentRequest" name="getAgentRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAgentResponse" name="getAgentResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="creatAgent">
+
+         <wsdl:input message="impl:creatAgentRequest" name="creatAgentRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:creatAgentResponse" name="creatAgentResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AgentServiceSoapBinding" type="impl:AgentService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getAgent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAgentRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAgentResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="creatAgent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="creatAgentRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="creatAgentResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AgentServiceService">
+
+      <wsdl:port binding="impl:AgentServiceSoapBinding" name="AgentService">
+
+         <wsdlsoap:address location="http://localhost:7001/AgentServiceSoap/services/AgentService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
